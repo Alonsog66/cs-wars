@@ -6,31 +6,43 @@ const UserInfo = (props) => {
 
   const challenges = props.userChallenges.map((challenge, index) => {
     return (
-      <Challenge 
+      <Challenge
         key={`challenge${index}`}
         name={challenge.name}
         language={challenge.completedLanguages[0]}
         date={challenge.completedAt}
       />
-      
-    )
-  })
+    );
+  });
 
   return (
     <div id='user-info'>
-    <center> <h1>Welcome back {data.cwusername}!</h1></center>
-    <br />
-      <ul>        
-        <li> Completed Challanges: {data.completed}</li>
-        <li> Favorite Language: {'Javascript'}</li>
-        <li> Codewars Rank: {data.rank}</li>
-      </ul>
+      <center>
+        <h1>Welcome back {data.cwusername}!</h1>
+      </center>
       <br />
-      <center><h2>Most Recent Challenges</h2></center>
-      <br />
-      <div id="challenges">
-      {challenges}
-      </div>
+      <center>
+        <ul>
+          <li>
+            <span>Completed Challanges:</span> {data.completed}
+          </li>
+          <li>
+            <span>Favorite Language:</span> {'Javascript'}
+          </li>
+          <li>
+            <span>Codewars Rank:</span> {data.rank}
+          </li>
+        </ul>
+
+        <br />
+
+        <h2>Most Recent Challenges</h2>
+
+        <br />
+
+        <div id='challenges'>{challenges}</div>
+      </center>
+      <br></br>
     </div>
   );
 };
